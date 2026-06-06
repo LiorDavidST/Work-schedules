@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: shift-management
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: GOOGLE_APPLICATION_CREDENTIALS_JSON
+        sync: false
